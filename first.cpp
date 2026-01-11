@@ -26,71 +26,7 @@ int main()
     {
         string st;
         cin >> st;
-        if (st == "first")
-        {
-            ll n;
-            cin >> n;
-            vector<ll> arr(n);
-            string a = "abcdefghijklmnopqrstuvwxyz";
-            for (int i = 0; i < n; i++)
-                cin >> arr[i];
-            string temp = "";
-            for (int i = 0; i < n; i++)
-            {
-                vector<int> tt;
-                ll val = arr[i];
-                while (val)
-                {
-                    tt.push_back(val % 10);
-                    val /= 10;
-                }
-                if (tt.empty())
-                    tt.push_back(0);
-                reverse(tt.begin(), tt.end());
-                for (int j = 0; j < (int)tt.size(); j++)
-                    temp += a[tt[j]];
-                while (tt.size() < 10)
-                {
-                    tt.push_back(0);
-                    temp += 'z';
-                }
-            }
-          
-            cout << temp << endl;
-        }
-        else
-        {
-            string b;
-            cin >> b;
-            vector<string> p;
-            string a = "abcdefghijklmnopqrstuvwxyz";
-            string temp = "";
-            for (int i = 0; i < b.length(); i += 10)
-            {
-                string ans = "";
-                int r = i;
-                while (ans.length() < 10 and b[r] != 'z')
-                {
-                    for (int j = 0; j < 26; j++)
-                    {
-                        if (b[r] == a[j])
-                        {
-                            ans += to_string(j);
-                            break;
-                        }
-                    }
-                    r++;
-                }
-                p.push_back(ans);
-            }
-
-            cout << p.size() << endl;
-            for (int i = 0; i < p.size(); i++)
-            {
-                cout << p[i] << " ";
-            }
-            cout << endl;
-        }
+      cout<<st;
     }
     return 0;
 }
